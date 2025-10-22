@@ -13,6 +13,7 @@
     "storage"
   ],
   "host_permissions": [
+    "<all_urls>",
     "https://*.console.aws.amazon.com/*",
     "https://*.amazonaws.cn/*",
     "https://*.google.com/*"
@@ -23,13 +24,12 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://*.console.aws.amazon.com/*",
-        "https://*.google.com/*"
-      ],
+      "matches": ["<all_urls>"],
       "js": ["content/panel.js"],
       "css": ["ui/styles.css"],
-      "run_at": "document_idle"
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
     }
   ],
   "action": { "default_popup": "popup.html" }
