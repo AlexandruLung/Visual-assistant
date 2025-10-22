@@ -1,0 +1,93 @@
+/* Floating panel */
+.aws-assist-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 380px;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  background: #0b1220;
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  z-index: 2147483646;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  overflow: hidden;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+.aws-assist-panel-header {
+  padding: 8px 12px;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: move;
+}
+
+.aws-assist-panel-title { font-weight: 600; font-size: 14px; }
+
+.aws-assist-chat {
+  padding: 8px 12px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.aws-assist-msg { font-size: 13px; line-height: 1.35; }
+.aws-assist-msg.user { color: #93c5fd; }
+.aws-assist-msg.assistant { color: #e5e7eb; }
+.aws-assist-msg.system { color: #a1a1aa; font-style: italic; }
+
+.aws-assist-input {
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.aws-assist-input input {
+  flex: 1;
+  background: #111827;
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.aws-assist-input button {
+  background: #22c55e;
+  border: none;
+  color: #0b1220;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.aws-assist-toolbar {
+  display: flex;
+  gap: 6px;
+  padding: 6px 8px;
+  background: #0f172a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.aws-assist-toolbar button {
+  background: #1f2937;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #e5e7eb;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Highlights */
+@keyframes awsAssistPulse {
+  0% { box-shadow: 0 0 0 4px rgba(34,197,94,0.15); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0.28); }
+  100% { box-shadow: 0 0 0 4px rgba(34,197,94,0.15); }
+}
+

@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "AWS Learning Assistant (Local-Only)",
+  "version": "0.1.0",
+  "description": "Ask AWS questions, highlight console UI, and use voice — no storage.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab",
+    "tabCapture",
+    "offscreen",
+    "tts",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.console.aws.amazon.com/*",
+    "https://*.amazonaws.cn/*",
+    "https://*.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background/worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.console.aws.amazon.com/*",
+        "https://*.google.com/*"
+      ],
+      "js": ["content/panel.js"],
+      "css": ["ui/styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": { "default_popup": "popup.html" }
+}

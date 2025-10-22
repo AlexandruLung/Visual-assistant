@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+*.map
+
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Env / Secrets (do not commit keys)
+.env
+.env.*
+
+# Coverage / temp
+coverage/
+tmp/
+
